@@ -1,0 +1,9 @@
+ErrorDocument 404 /error.html
+<IfModule rewrite_module>
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)\.html$ index.php/home/$1 [QSA,PT,L]
+RewriteRule ^(.*)\.htm$ admin.php/admin/$1 [QSA,PT,L]
+</IfModule>

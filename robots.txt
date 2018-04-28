@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /Public/
+Disallow: /ThinkPHP/
+Disallow: /upload/
+Disallow: /client/
+Disallow: /server/
+Disallow: /Application/Admin
+Disallow: /Application/Common
+Disallow: /Application/Runtime
+Disallow: /Application/Weixin
+Disallow: /Application/Home/Common
+Disallow: /Application/Home/Conf
+Disallow: /Application/Home/Controller
+Disallow: /Application/Home/Model
+Disallow: /admin.php
+Disallow: /weixin.php
+Disallow: /error.html

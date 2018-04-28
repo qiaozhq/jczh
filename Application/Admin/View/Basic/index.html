@@ -1,0 +1,151 @@
+<include file="Index/header" />
+<body>
+<div id="wrapper">
+
+  <include file="Index/nav"/>
+  <script src="/Public/js/kindeditor/kindeditor-all.js"></script>
+<div id="page-wrapper">
+
+	<div class="container-fluid">
+
+		<!-- Page Heading -->
+		<include file="Basic/button"/>
+		<!-- /.row -->
+
+		<div class="row">
+			<div class="col-lg-6">
+
+				<form class="form-horizontal" id="singcms-form">
+					<div class="form-group">
+						<label for="inputname" class="col-sm-2 control-label">站点标题:</label>
+						<div class="col-sm-5">
+							<input type="text" name="title" value="{$vo.title}" class="form-control" id="inputname" placeholder="请填写站点标题">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">站点关键词:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.keywords}" name="keywords" id="inputPassword3" placeholder="请填写站点关键词">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">站点描述:</label>
+						<div class="col-sm-5">
+							<textarea class="form-control" rows="3" name="description">{$vo.description}</textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword5" class="col-sm-2 control-label">首页广告1标题:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.adv01title}" name="adv01title" id="inputPassword5" placeholder="请填写首页广告1标题">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">首页广告1描述:</label>
+						<div class="col-sm-5">
+							<textarea class="form-control" rows="3" name="adv01description" placeholder="请填写首页广告1描述">{$vo.adv01description}</textarea>
+						</div>
+					</div>					
+					<div class="form-group">
+						<label for="inputPassword5" class="col-sm-2 control-label">首页广告2标题:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.adv02title}" name="adv02title" id="inputPassword5" placeholder="请填写首页广告2标题">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">首页广告2描述:</label>
+						<div class="col-sm-5">
+							<textarea class="form-control" rows="3" name="adv02description" placeholder="请填写首页广告2描述">{$vo.adv02description}</textarea>
+						</div>
+					</div>						
+					<div class="form-group">
+						<label for="inputPassword5" class="col-sm-2 control-label">首页广告3标题:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.adv03title}" name="adv03title" id="inputPassword5" placeholder="请填写首页广告3标题">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">首页广告3描述:</label>
+						<div class="col-sm-5">
+							<textarea class="form-control" rows="3" name="adv03description" placeholder="请填写首页广告2描述">{$vo.adv03description}</textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword5" class="col-sm-2 control-label">宣传点1标题:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.point01title}" name="point01title" id="inputPassword5" placeholder="请填写宣传点1标题">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword5" class="col-sm-2 control-label">宣传点1描述:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.point01description}" name="point01description" id="inputPassword5" placeholder="请填写宣传点1描述">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword5" class="col-sm-2 control-label">宣传点2标题:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.point02title}" name="point02title" id="inputPassword5" placeholder="请填写宣传点2标题">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword5" class="col-sm-2 control-label">宣传点2描述:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.point02description}" name="point02description" id="inputPassword5" placeholder="请填写宣传点2描述">
+						</div>
+					</div>	
+					<div class="form-group">
+						<label for="inputPassword5" class="col-sm-2 control-label">宣传点3标题:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.point03title}" name="point03title" id="inputPassword5" placeholder="请填写宣传点3标题">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword5" class="col-sm-2 control-label">宣传点3描述:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" value="{$vo.point03description}" name="point03description" id="inputPassword5" placeholder="请填写宣传点3描述">
+						</div>
+					</div>
+
+		            <div class="form-group">
+		              <label for="inputPassword3" class="col-sm-2 control-label">公司简介:</label>
+		              <div class="col-sm-5">
+		                <textarea class="input js-editor" id="editor_singcms" name="compintro" rows="20" >{$vo.compintro|str_replace='\\\"','',###}</textarea>
+		              </div>
+		            </div>													
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="button" class="btn btn-default" id="singcms-button-submit">提交</button>
+						</div>
+					</div>
+				</form>
+
+
+			</div>
+
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<script type="text/javascript" src="/Public/js/admin/form.js"></script>
+<script>
+	var SCOPE = {
+		'save_url' : '/admin.php?c=basic&a=save',
+		'jump_url' : '/admin.php?c=basic',
+	};
+  KindEditor.ready(function(K) {
+    window.editor = K.create('#editor_singcms',{
+      uploadJson : '/admin.php?c=image&a=kindupload',
+      afterBlur : function(){this.sync();}, //
+    });
+  });
+</script>
+<include file="Index/footer" />

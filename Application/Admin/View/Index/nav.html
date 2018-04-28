@@ -1,27 +1,9 @@
-<?php
-  $navs = D("Menu")->getAdminMenus();
-  $username = getLoginUsername();
-  foreach($navs as $k=>$v) {
-    if($v['c'] == 'admin' && $username != 'admin') {
-      unset($navs[$k]);
-    }
-    if($v['c'] == 'menu' && $username != 'admin') {
-      unset($navs[$k]);
-    } 
-    if($v['c'] == 'position' && $username != 'admin') {
-      unset($navs[$k]);
-    } 
-  }
-  $index = 'index';
-?>
-
-
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     
-    <a class="navbar-brand" >e络工作室-后台管理系统</a>
+    <a class="navbar-brand" >大连久诚卓慧-后台管理系统</a>
   </div>
   <!-- Top Menu Items -->
   <ul class="nav navbar-right top-nav">

@@ -6,6 +6,6 @@ return array(
     'URL_MODEL'=>2,
     "URL_HTML_SUFFIX"=>'html',
     'LOAD_EXT_CONFIG' => 'db',
-    'MD5_PRE' => 'sing_cms',
+    'MD5_PRE' => 'jczh_cms',
     'HTML_FILE_SUFFIX' => '.html',
 );

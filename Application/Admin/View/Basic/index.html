@@ -17,22 +17,40 @@
 
 				<form class="form-horizontal" id="singcms-form">
 					<div class="form-group">
-						<label for="inputname" class="col-sm-2 control-label">站点标题:</label>
+						<label for="title" class="col-sm-2 control-label">站点标题:</label>
 						<div class="col-sm-5">
-							<input type="text" name="title" value="{$vo.title}" class="form-control" id="inputname" placeholder="请填写站点标题">
+							<input type="text" name="title" value="{$vo.title}" class="form-control" id="title" placeholder="请填写站点标题">
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">站点关键词:</label>
+						<label for="keywords" class="col-sm-2 control-label">站点关键词:</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.keywords}" name="keywords" id="inputPassword3" placeholder="请填写站点关键词">
+							<input type="text" class="form-control" value="{$vo.keywords}" name="keywords" id="keywords" placeholder="请填写站点关键词">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">站点描述:</label>
+						<label for="description" class="col-sm-2 control-label">站点描述:</label>
 						<div class="col-sm-5">
-							<textarea class="form-control" rows="3" name="description">{$vo.description}</textarea>
+							<textarea class="form-control" rows="3" name="description" id="description">{$vo.description}</textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="version" class="col-sm-2 control-label">版本管理:</label>
+						<div class="col-sm-5">
+							<input type="text" name="version" value="{$vo.version}" class="form-control" id="version" placeholder="请填写站点版本">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="computer" class="col-sm-2 control-label">公司介绍:</label>
+						<div class="col-sm-5">
+							<textarea class="form-control" rows="3" name="computer" id="computer">{$vo.computer}</textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="team" class="col-sm-2 control-label">团队描述:</label>
+						<div class="col-sm-5">
+							<textarea class="form-control" rows="3" name="team" id="team">{$vo.team}</textarea>
 						</div>
 					</div>
 					<div class="form-group">

@@ -2,7 +2,9 @@
 /**
  * 公用的方法
  */
-
+function formatwork($str){
+   return str_replace("\r\n","<br>",$str);
+}
 function  show($status, $message,$data=array()) {
     $reuslt = array(
         'status' => $status,

@@ -114,7 +114,7 @@
 						</div>
 						<div class="pics animated" style="opacity: 1;">
 							<img src="{$product.thumb}">
-							<a class="readDetail" style="right:27%;" href="./view/xcx.html" target="_blank">查看详情</a>
+							<a class="readDetail" style="right:27%;"  data-toggle="modal" data-target="#myModal">查看详情</a>
 						</div>
 					</div>
 				</li>
@@ -122,48 +122,73 @@
 		</ul>
 	</div>
 	<!-- 招聘信息 -->
-	<div class="m-job" id="job">
-		<div class="basic-info">
-			<h2 class="job-title">资深搜索算法工程师</h2>
-			<span class="post-date">发布时间：2018-04-28</span>
-			<table class="job-params">
-				<colgroup>
-				<col width="110">
-				<col>
-				<col width="110">
-				<col>
-			</colgroup>
-			<tbody><tr>
-				<th>职位类别：</th>
-				<td>技术&gt;技术综合</td>
-				<th>最低学历：</th>
-				<td>研究生</td>
-			</tr>
-			<tr>
-				<th>工作地点：</th>
-				<td>大连市</td>
-				<th>工作年限：</th>
-				<td>3-5年</td>
-			</tr>
-			<tr>
-				<th>招聘人数：</th>
-				<td>
-					2人
-				</td>
-				<th>工作类型：</th>
-				<td>全职</td>
-			</tr>
-		</tbody></table>
-	</div>
-	<div class="detail-info">
-		<div class="detail-section">
-			<h3 class="section-title">岗位描述</h3>
-			<div class="section-content">1.参与考拉搜索，关系搜索，推荐系统等相关领域的算法研发工作<br>2.可以深入研究不同的技术领域：海量数据分析，搜索相关性算法，用户行为理解与挖掘，个性化搜索，知识图谱，数据挖掘，推荐，自然语言处理，Query理解等。</div>
+	<volist name="jobs" id="jobs">
+		<div class="m-job" id="job">
+			<div class="basic-info">
+				<h2 class="job-title">{$jobs.title}</h2>
+				<span class="post-date">发布时间：{$jobs.publishtime}</span>
+				<table class="job-params">
+					<colgroup>
+					<col width="110">
+					<col>
+					<col width="110">
+					<col>
+				</colgroup>
+				<tbody><tr>
+					<th>职位类别：</th>
+					<td>{$jobs.type}</td>
+					<th>最低学历：</th>
+					<td>{$jobs.education}</td>
+				</tr>
+				<tr>
+					<th>工作地点：</th>
+					<td>{$jobs.address}</td>
+					<th>工作年限：</th>
+					<td>{$jobs.workyears}</td>
+				</tr>
+				<tr>
+					<th>招聘人数：</th>
+					<td>{$jobs.number}</td>
+					<th>工作类型：</th>
+					<td>{$jobs.worktype}</td>
+				</tr>
+			</tbody></table>
 		</div>
-		<div class="detail-section">
-			<h3 class="section-title">岗位要求</h3>
-			<div class="section-content">1.硕士学历两年以上相关工作经验，计算机或数学相关专业；<br>2.精通Linux平台下的Java语言开发，熟练使用gcc、gdb、Makefile等开发工具,&nbsp;有分布式数据处理平台开发经验的更佳；<br>3.具备机器学习/自然语言处理/数据挖掘/Query分析等其中至少一种的研究背景或项目经历；<br>4.有较强的分析和解决问题能力，有持续自我学习的能力和意愿,善于沟通和逻辑表达；</div>
+		<div class="detail-info">
+			<div class="detail-section">
+				<h3 class="section-title">岗位描述</h3>
+				<div class="section-content">{$jobs.workinfo|formatwork}</div>
+			</div>
+			<div class="detail-section">
+				<h3 class="section-title">岗位要求</h3>
+				<div class="section-content">{$jobs.workrequire|formatwork}</div>
+			</div>
 		</div>
-	</div>
+	</volist>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div class="modal-body">
+				在这里添加一些文本
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary">
+					提交更改
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
 </div>
 <include file="Index/footer" />

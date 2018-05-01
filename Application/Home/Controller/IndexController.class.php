@@ -7,7 +7,9 @@ class IndexController extends CommonController {
     	$users = D("User")->getUsers();
         $this->assign('users', $users);
 		$products = D("Product")->getProducts();
-        $this->assign('products', $products); 
+        $this->assign('products', $products);
+		$jobs = D("Job")->getJobs();
+        $this->assign('jobs', $jobs); 
         $this->display();
     }
 }

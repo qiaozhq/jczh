@@ -41,6 +41,14 @@
 							<input type="text" name="version" value="{$vo.version}" class="form-control" id="version" placeholder="请填写站点版本">
 						</div>
 					</div>
+		            <div class="form-group">
+		              <label for="inputname" class="col-sm-2 control-label">顶部图片:</label>
+		              <div class="col-sm-5">
+		                <input id="file_upload"  type="file" multiple="true" >
+		                <img id="upload_org_code_img" width="300" height="135" src="{$vo.thumb}">
+		                <input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="{$vo.thumb}">
+		              </div>
+		            </div>
 					<div class="form-group">
 						<label for="computer" class="col-sm-2 control-label">公司介绍:</label>
 						<div class="col-sm-5">
@@ -54,84 +62,41 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword5" class="col-sm-2 control-label">首页广告1标题:</label>
+						<label for="address" class="col-sm-2 control-label">地址:</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.adv01title}" name="adv01title" id="inputPassword5" placeholder="请填写首页广告1标题">
+							<input type="text" name="address" value="{$vo.address}" class="form-control" id="address" placeholder="请填写联系我们的地址信息">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">首页广告1描述:</label>
+						<label for="zipcode" class="col-sm-2 control-label">邮编:</label>
 						<div class="col-sm-5">
-							<textarea class="form-control" rows="3" name="adv01description" placeholder="请填写首页广告1描述">{$vo.adv01description}</textarea>
-						</div>
-					</div>					
-					<div class="form-group">
-						<label for="inputPassword5" class="col-sm-2 control-label">首页广告2标题:</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.adv02title}" name="adv02title" id="inputPassword5" placeholder="请填写首页广告2标题">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">首页广告2描述:</label>
-						<div class="col-sm-5">
-							<textarea class="form-control" rows="3" name="adv02description" placeholder="请填写首页广告2描述">{$vo.adv02description}</textarea>
-						</div>
-					</div>						
-					<div class="form-group">
-						<label for="inputPassword5" class="col-sm-2 control-label">首页广告3标题:</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.adv03title}" name="adv03title" id="inputPassword5" placeholder="请填写首页广告3标题">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">首页广告3描述:</label>
-						<div class="col-sm-5">
-							<textarea class="form-control" rows="3" name="adv03description" placeholder="请填写首页广告2描述">{$vo.adv03description}</textarea>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputPassword5" class="col-sm-2 control-label">宣传点1标题:</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.point01title}" name="point01title" id="inputPassword5" placeholder="请填写宣传点1标题">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputPassword5" class="col-sm-2 control-label">宣传点1描述:</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.point01description}" name="point01description" id="inputPassword5" placeholder="请填写宣传点1描述">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputPassword5" class="col-sm-2 control-label">宣传点2标题:</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.point02title}" name="point02title" id="inputPassword5" placeholder="请填写宣传点2标题">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputPassword5" class="col-sm-2 control-label">宣传点2描述:</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.point02description}" name="point02description" id="inputPassword5" placeholder="请填写宣传点2描述">
+							<input type="text" name="zipcode" value="{$vo.zipcode}" class="form-control" id="zipcode" placeholder="请填写联系我们的邮编信息">
 						</div>
 					</div>	
 					<div class="form-group">
-						<label for="inputPassword5" class="col-sm-2 control-label">宣传点3标题:</label>
+						<label for="tel" class="col-sm-2 control-label">电话:</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.point03title}" name="point03title" id="inputPassword5" placeholder="请填写宣传点3标题">
+							<input type="text" name="tel" value="{$vo.tel}" class="form-control" id="tel" placeholder="请填写联系我们的电话信息">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword5" class="col-sm-2 control-label">宣传点3描述:</label>
+						<label for="fax" class="col-sm-2 control-label">传真:</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" value="{$vo.point03description}" name="point03description" id="inputPassword5" placeholder="请填写宣传点3描述">
+							<input type="text" name="fax" value="{$vo.fax}" class="form-control" id="fax" placeholder="请填写联系我们的传真信息">
 						</div>
 					</div>
-
-		            <div class="form-group">
-		              <label for="inputPassword3" class="col-sm-2 control-label">公司简介:</label>
-		              <div class="col-sm-5">
-		                <textarea class="input js-editor" id="editor_singcms" name="compintro" rows="20" >{$vo.compintro|str_replace='\\\"','',###}</textarea>
-		              </div>
-		            </div>													
+					<div class="form-group">
+						<label for="mail" class="col-sm-2 control-label">E-mail:</label>
+						<div class="col-sm-5">
+							<input type="text" name="mail" value="{$vo.mail}" class="form-control" id="mail" placeholder="请填写联系我们的E-mail信息">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="service" class="col-sm-2 control-label">服务:</label>
+						<div class="col-sm-5">
+							<input type="text" name="service" value="{$vo.service}" class="form-control" id="service" placeholder="请填写联系我们的服务关键词">
+						</div>
+					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="button" class="btn btn-default" id="singcms-button-submit">提交</button>
@@ -154,10 +119,14 @@
 </div>
 <!-- /#wrapper -->
 <script type="text/javascript" src="/Public/js/admin/form.js"></script>
+<!-- /#wrapper -->
+<script src="/Public/js/admin/image.js"></script>
 <script>
 	var SCOPE = {
 		'save_url' : '/admin.php?c=basic&a=save',
 		'jump_url' : '/admin.php?c=basic',
+	    'ajax_upload_image_url' : '/admin.php?c=image&a=ajaxuploadimage',
+    	'ajax_upload_swf' : '/Public/js/party/uploadify.swf',
 	};
   KindEditor.ready(function(K) {
     window.editor = K.create('#editor_singcms',{
@@ -165,5 +134,11 @@
       afterBlur : function(){this.sync();}, //
     });
   });
+</script>
+<script>
+  var thumb = "{$news.thumb}";
+  if(thumb) {
+    $("#upload_org_code_img").show();
+  }
 </script>
 <include file="Index/footer" />

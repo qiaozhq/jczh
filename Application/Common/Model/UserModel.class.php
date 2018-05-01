@@ -14,7 +14,7 @@ class UserModel extends Model {
     //使用模块：home
     public function getUserByUsername($username='') {
         $data = array(
-            'username' => $username,
+            'name' => $username,
             'status'=>array('neq',-1),
         );
         $res = $this->_db->where($data)->find();
@@ -54,7 +54,6 @@ class UserModel extends Model {
         if(!$data || !is_array($data)) {
             return 0;
         }
-        $data['create_time']  = time();
         return $this->_db->add($data);
     }
 

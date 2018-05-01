@@ -7,7 +7,9 @@ class CommonController extends Controller {
         header("Content-type: text/html; charset=utf-8");
         parent::__construct();
         $basic = D("Basic")->select();
-        $this->assign('basic', $basic); 
+        $service = explode('|',$basic['service']); 
+        $this->assign('basic', $basic);
+        $this->assign('service', $service); 
     }
 
     public function _empty(){//方法不存在的时候

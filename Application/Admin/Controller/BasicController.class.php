@@ -26,6 +26,9 @@ class BasicController extends CommonController {
 			if(!$_POST['description']) {
 				return show(0, '站点描述不能为空');
 			}
+			if($_POST['version']) {
+			  $_POST['md5version'] = md5($_POST['version']);
+			}
 			D("Basic")->save($_POST);
 			return show(1, '配置成功');
 		}else {

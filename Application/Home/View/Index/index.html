@@ -1,206 +1,169 @@
 <include file="Index/header" />
-	<!-- 导航区域开始 -->
-	<div class="navbar regular">
-		<div class="container">
-			<div class="navbar-logo-w">
-				<img src="/Public/img/pc_logo_s.png" class="animated fadeInDown">
-			</div>
-			<div class="navbar-logo">
-				<img src="/Public/img/pc_logo_b.png" class="animated fadeInDown">
-			</div>
+<!-- 导航区域开始 -->
+<div class="navbar regular">
+	<div class="container">
+		<div class="navbar-logo-w">
+			<img src="/Public/img/pc_logo_s.png" class="animated fadeInDown">
+		</div>
+		<div class="navbar-logo">
+			<img src="/Public/img/pc_logo_b.png" class="animated fadeInDown">
+		</div>
+		<ul class="navbar-items">
+			<li class="">
+				<div class="led"></div>
+				<a href="#hero">首页</a>
+			</li>
+			<li class="">
+				<div class="led"></div>
+				<a href="#contact">公司介绍</a>
+			</li>
+			<li class="">
+				<div class="led"></div>
+				<a href="#apps">产品服务</a>
+			</li>
+			<li class="">
+				<div class="led"></div>
+				<a href="#job">招聘信息</a>
+			</li>
+			<li class="">
+				<div class="led"></div>
+				<a href="#cooperation">联系我们</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<a href="#" class="collapse-button">
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+</a>
+<div class="snap-drawers">
+	<div class="snap-drawer snap-drawer-right">
+		<div>
 			<ul class="navbar-items">
-				<li class="">
-					<div class="led"></div>
+				<li>
 					<a href="#hero">首页</a>
 				</li>
-				<li class="">
-					<div class="led"></div>
+				<li>
 					<a href="#contact">公司介绍</a>
 				</li>
-				<li class="">
-					<div class="led"></div>
+				<li>
 					<a href="#apps">产品服务</a>
 				</li>
-				<li class="">
-					<div class="led"></div>
+				<li>
 					<a href="#job">招聘信息</a>
 				</li>
-				<li class="">
-					<div class="led"></div>
+				<li>
 					<a href="#cooperation">联系我们</a>
 				</li>
 			</ul>
-		</div>
-	</div>
-	<a href="#" class="collapse-button">
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	</a>
-	<div class="snap-drawers">
-		<div class="snap-drawer snap-drawer-right">
-			<div>
-				<ul class="navbar-items">
-					<li>
-						<a href="#hero">首页</a>
-					</li>
-					<li>
-						<a href="#contact">公司介绍</a>
-					</li>
-					<li>
-						<a href="#apps">产品服务</a>
-					</li>
-					<li>
-						<a href="#job">招聘信息</a>
-					</li>
-					<li>
-						<a href="#cooperation">联系我们</a>
-					</li>
-				</ul>
-				<div style="position:absolute; bottom:0">
-					<p>久诚卓慧有限公司</p>
-				</div>
+			<div style="position:absolute; bottom:0">
+				<p>久诚卓慧有限公司</p>
 			</div>
 		</div>
 	</div>
-	<!-- 导航区域结束 -->
-	<div class="snap-content">
-		<!-- 顶部区域 -->
-		<div id="hero">
-			<div class="container">
-				<div class="logo">
-					<span class="animated zoomIn">大连久诚卓慧</span>
-				</div>
-				<h1 class="animated bounceInLeft delay05" style="margin-bottom:10%;">我们不仅仅是一个软件研发公司！</h1>
-				<div class="page_link">
-					<a href="#apps">
-						<div id="app-start" class="animated fadeIn delay1">查看案例</div>
-					</a>
-					<a href="#apps">
-						<div id="app-start" class="animated fadeIn delay1">微信小程序</div>
-					</a>
-				</div>
-				<div class="animated fadeIn delay2" style="width:100%;position:fixed;bottom:5%;text-align: center;color:#90A4AE;font-size: 1.2em;">
-				</div>
+</div>
+<!-- 导航区域结束 -->
+<div class="snap-content">
+	<!-- 顶部区域 -->
+	<div id="hero" style="background: url({$basic.thumb}) no-repeat top center;">
+		<div class="container">
+			<div class="logo">
+				<span class="animated zoomIn">大连久诚卓慧</span>
+			</div>
+			<h1 class="animated bounceInLeft delay05" style="margin-bottom:10%;">长久 诚信 卓越 智慧</h1>
+			
+			<div class="animated fadeIn delay2" style="width:100%;position:fixed;bottom:5%;text-align: center;color:#90A4AE;font-size: 1.2em;">
 			</div>
 		</div>
-		<!-- 公司介绍,团队介绍 -->
-		<div class="section" id="contact">
-			<div class="title">
-				<h2>公司介绍</h2>
-			</div>
-			<p id="us" style="opacity:1;transition:all 0.2s linear;">{$basic.computer}
-			</p>
+	</div>
+	<!-- 公司介绍,团队介绍 -->
+	<div class="section" id="contact">
+		<div class="title">
+			<h2>公司介绍</h2>
 		</div>
-		<div class="section" id="team">
-			<div class="title">
-				<h2>我们的团队</h2>
-				<p>{$basic.team}</p>
-			</div>
-			<div id="photo-wall">
-				<ul>
-					<li class="team-list">
-						<img class="photos img-responsive img-circle" src="/Public/img/xq.jpg">
-						<h4 class="name">李某某</h4>
-						<h5 class="job">iOS大牛</h5>
-					</li>
-					<li class="team-list">
-						<img class="photos img-responsive img-circle" src="/Public/img/lyp.jpg">
-						<h4 class="name">李某某</h4>
-						<h5 class="job">iOS大牛</h5>
-					</li>
-					<li class="team-list">
-						<img class="photos img-responsive img-circle" src="/Public/img/zqq.jpg">
-						<h4 class="name">赵某某</h4>
-						<h5 class="job">UI大牛</h5>
-					</li>
-					<li class="team-list">
-						<img class="photos img-responsive img-circle" src="/Public/img/gbb.jpg">
-						<h4 class="name">郭某某</h4>
-						<h5 class="job">web前端大牛</h5>
-					</li>
-				</ul>
-			</div>
+		<p id="us" style="opacity:1;transition:all 0.2s linear;">{$basic.computer}
+		</p>
+	</div>
+	<div class="section" id="team">
+		<div class="title">
+			<h2>我们的团队</h2>
+			<p>{$basic.team}</p>
 		</div>
-		<!-- 产品服务 -->
-		<div id="apps">
+		<div id="photo-wall">
 			<ul>
-				<li class="text-first">
+				<volist name="users" id="user">
+					<li class="team-list">
+						<img class="photos img-responsive img-circle" src="{$user.thumb}">
+						<h4 class="name">{$user.name}</h4>
+						<h5 class="job">{$user.job}</h5>
+					</li>
+				</volist>
+			</ul>
+		</div>
+	</div>
+	<!-- 产品服务 -->
+	<div id="apps">
+		<ul>
+			<volist name="products" id="product">
+				<li class="<if condition="$i%2==1">text-first<else/>pic-first</if>">
 					<div class="container">
 						<div class="text">
-							<h3 style="text-align: left;">微信小程序研发</h3>
-							<p> 成功案例：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问答红包、发令包、人人赞洗衣等<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;久诚卓慧在小程序上线第一天就发布了自己产品人人赞小程序，之后研发多个新颖的玩法小程序，包括发令包和问答红包等，也为多个企业定制了小程序模板。
-							</p>
+							<h3 style="text-align: left;">{$product.title}</h3>
+							{$product.description}
 						</div>
 						<div class="pics animated" style="opacity: 1;">
-							<img src="/Public/img/xcx.png">
+							<img src="{$product.thumb}">
 							<a class="readDetail" style="right:27%;" href="./view/xcx.html" target="_blank">查看详情</a>
 						</div>
 					</div>
 				</li>
-				<li class="pic-first">
-					<div class="container">
-						<div class="text">
-							<h3 style="text-align: left;">电商平台整体解决方案</h3>
-							<p>1、F2B2C平台<br> 2、B2B2C平台
-								<br> 3、B2C平台
-								<br> 4、分销平台
-								<br>
-							</p>
-							<p>成功案例：大连奥林匹克电子城－中电汇平台(F2B2C平台)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大连奥林匹克电子城是大连最大的电子卖场，旗下的中电汇平台致力于整合全国卖场并打通产品渠道，同时为F和B做金融服务，已经成功获得投资，通过该平台的成功研发和奥电的认可，久诚卓慧和奥电达成了深度合作，双方互持股份，品诚将持续为奥电提供整体的电商解决方案服务。
-							</p>
-						</div>
-						<div class="pics animated" style="opacity: 1;">
-							<img src="/Public/img/zdh.jpg">
-							<a class="readDetail" style="right:27%;" href="./view/zdh.html" target="_blank">查看详情</a>
-						</div>
-					</div>
-				</li>
-			</ul>
+			</volist>
+		</ul>
+	</div>
+	<!-- 招聘信息 -->
+	<div class="m-job" id="job">
+		<div class="basic-info">
+			<h2 class="job-title">资深搜索算法工程师</h2>
+			<span class="post-date">发布时间：2018-04-28</span>
+			<table class="job-params">
+				<colgroup>
+				<col width="110">
+				<col>
+				<col width="110">
+				<col>
+			</colgroup>
+			<tbody><tr>
+				<th>职位类别：</th>
+				<td>技术&gt;技术综合</td>
+				<th>最低学历：</th>
+				<td>研究生</td>
+			</tr>
+			<tr>
+				<th>工作地点：</th>
+				<td>大连市</td>
+				<th>工作年限：</th>
+				<td>3-5年</td>
+			</tr>
+			<tr>
+				<th>招聘人数：</th>
+				<td>
+					2人
+				</td>
+				<th>工作类型：</th>
+				<td>全职</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="detail-info">
+		<div class="detail-section">
+			<h3 class="section-title">岗位描述</h3>
+			<div class="section-content">1.参与考拉搜索，关系搜索，推荐系统等相关领域的算法研发工作<br>2.可以深入研究不同的技术领域：海量数据分析，搜索相关性算法，用户行为理解与挖掘，个性化搜索，知识图谱，数据挖掘，推荐，自然语言处理，Query理解等。</div>
 		</div>
-		<!-- 招聘信息 -->
-		<div class="m-job" id="job">
-			<div class="basic-info">
-				<h2 class="job-title">资深搜索算法工程师-跨境电商</h2>
-				<span class="post-date">发布时间：2018-04-28</span>
-				<table class="job-params">
-					<colgroup>
-						<col width="110">
-						<col>
-						<col width="110">
-						<col>
-					</colgroup>
-					<tbody><tr>
-						<th>职位类别：</th>
-						<td>技术&gt;技术综合</td>
-						<th>最低学历：</th>
-						<td>研究生</td>
-					</tr>
-					<tr>
-						<th>工作地点：</th>
-						<td>大连市</td>
-						<th>工作年限：</th>
-						<td>3-5年</td>
-					</tr>
-					<tr>
-						<th>招聘人数：</th>
-						<td>
-							2人
-						</td>
-						<th>工作类型：</th>
-						<td>全职</td>
-					</tr>
-				</tbody></table>
-			</div>
-			<div class="detail-info">
-				<div class="detail-section">
-					<h3 class="section-title">岗位描述</h3>
-					<div class="section-content">1.参与考拉搜索，关系搜索，推荐系统等相关领域的算法研发工作<br>2.可以深入研究不同的技术领域：海量数据分析，搜索相关性算法，用户行为理解与挖掘，个性化搜索，知识图谱，数据挖掘，推荐，自然语言处理，Query理解等。</div>
-				</div>
-				<div class="detail-section">
-					<h3 class="section-title">岗位要求</h3>
-					<div class="section-content">1.硕士学历两年以上相关工作经验，计算机或数学相关专业；<br>2.精通Linux平台下的Java语言开发，熟练使用gcc、gdb、Makefile等开发工具,&nbsp;有分布式数据处理平台开发经验的更佳；<br>3.具备机器学习/自然语言处理/数据挖掘/Query分析等其中至少一种的研究背景或项目经历；<br>4.有较强的分析和解决问题能力，有持续自我学习的能力和意愿,善于沟通和逻辑表达；</div>
-				</div>
-			</div>
+		<div class="detail-section">
+			<h3 class="section-title">岗位要求</h3>
+			<div class="section-content">1.硕士学历两年以上相关工作经验，计算机或数学相关专业；<br>2.精通Linux平台下的Java语言开发，熟练使用gcc、gdb、Makefile等开发工具,&nbsp;有分布式数据处理平台开发经验的更佳；<br>3.具备机器学习/自然语言处理/数据挖掘/Query分析等其中至少一种的研究背景或项目经历；<br>4.有较强的分析和解决问题能力，有持续自我学习的能力和意愿,善于沟通和逻辑表达；</div>
 		</div>
+	</div>
+</div>
 <include file="Index/footer" />

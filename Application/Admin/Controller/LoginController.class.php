@@ -41,6 +41,6 @@ class LoginController extends Controller {
     //退出登录
     public function loginout() {
         session('adminUser', null);
-        $this->redirect('/admin.php?c=login');
+        $this->redirect('/admin.php?');
     }
 }

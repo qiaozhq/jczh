@@ -1382,3 +1382,9 @@ div.vr_block a.readDetail {
     font-size: 3rem;
     color: white;
 }
+@media screen and (min-width:768px) {
+.modal-dialog {
+    width: 90%!important;
+    margin: 50px auto!important;
+}
+}

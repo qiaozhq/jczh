@@ -37,6 +37,11 @@ $('.singcms-table #singcms-edit').on('click',function(){
     var url = SCOPE.edit_url + '&id='+id;
     window.location.href=url;
 });
+$('.singcms-table #singcms-edit2').on('click',function(){
+    var id = $(this).attr('attr-id');
+    var url = SCOPE.edit2_url + '&id='+id;
+    window.location.href=url;
+});
 
 
 /**

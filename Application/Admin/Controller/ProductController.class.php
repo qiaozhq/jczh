@@ -37,9 +37,27 @@ class ProductController extends CommonController {
             $this->display();
         }
     }
+    //添加/修改新闻
+    public function addcontent(){
+        if($_POST) {
+            if($_POST['product_id']) {
+                return $this->save($_POST);
+            }
+        }else {
+            $this->display();
+        }
+    }
 
     //取得要修改的新闻数据
     public function edit() {
+        $id = $_GET['id'];
+        $product = D("Product")->find($id);
+        $this->assign('product', $product);
+        $this->display();
+    }
+
+    //取得要修改的新闻数据
+    public function editcontent() {
         $id = $_GET['id'];
         $product = D("Product")->find($id);
         $this->assign('product', $product);

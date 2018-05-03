@@ -13,10 +13,10 @@
 
           <ol class="breadcrumb">
             <li>
-              <i class="fa fa-dashboard"></i>新闻管理
+              <i class="fa fa-dashboard"></i>产品服务
             </li>
             <li class="active">
-              <i class="fa fa-table"></i>新闻列表
+              <i class="fa fa-table"></i>列表
             </li>
           </ol>
         </div>
@@ -53,6 +53,7 @@
                       <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$new.product_id}"  attr-message="删除">
                         <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
                       </a>
+                      <span class="sing_cursor glyphicon  glyphicon-pencil" aria-hidden="true" id="singcms-edit2" attr-id="{$new.product_id}" ></span>
                     </td>
                   </tr>
                 </volist>
@@ -83,6 +84,7 @@
 <script>
   var SCOPE = {
     'edit_url' : '/admin.php?c=product&a=edit',
+    'edit2_url' : '/admin.php?c=product&a=editcontent',
     'add_url' : '/admin.php?c=product&a=add',
     'set_status_url' : '/admin.php?c=product&a=setStatus',
     'listorder_url' : '/admin.php?c=product&a=listorder',

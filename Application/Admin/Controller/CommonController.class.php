@@ -14,7 +14,7 @@ class CommonController extends Controller {
 		$isLogin = $this->isLogin();
 		if(!$isLogin) {
 			// 访问后台任何页面，如果没有登录，都跳转到登录页面
-			$this->redirect('/admin.php?c=login');
+			$this->redirect('/login');
 		}
 	}
 

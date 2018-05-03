@@ -5,7 +5,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 use Think\Exception;
-class AdminController extends CommonController { 
+class AdminuserController extends CommonController { 
     //管理员用户管理首页
     public function index() {
         $admins = D('Admin')->getAdmins();

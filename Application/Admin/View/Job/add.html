@@ -83,16 +83,16 @@
               </div>
             </div> 
             <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <button type="button" class="btn btn-default" id="singcms-button-submit">提交</button>
-              </div>
-            </div>
-            <div class="form-group">
               <label for="publishtime" class="col-sm-2 control-label">发布时间:</label>
               <div class="col-sm-5">
                 <input type="text" name="publishtime" class="form-control" id="publishtime" placeholder="请填写发布时间">
               </div>
-            </div>  
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-default" id="singcms-button-submit">提交</button>
+              </div>
+            </div> 
             <input name="content" type="hidden" value="">
           </form>
 
@@ -111,8 +111,8 @@
 </div>
 <script>
   var SCOPE = {
-    'save_url' : '/admin.php?c=job&a=add',
-    'jump_url' : '/admin.php?c=job',
+    'save_url' : '/job/add.htm',
+    'jump_url' : '/job.htm',
     'ajax_upload_image_url' : '/admin.php?c=image&a=ajaxuploadimage',
     'ajax_upload_swf' : '/Public/js/party/uploadify.swf',
   };

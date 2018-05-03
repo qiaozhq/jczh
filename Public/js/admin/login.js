@@ -23,7 +23,7 @@ var login = {
                 return dialog.error(result.message);
             }
             if(result.status == 1) {
-                return dialog.success(result.message, '/admin.php?c=basic');
+                return dialog.success(result.message, '/basic.htm');
             }
 
         },'JSON');

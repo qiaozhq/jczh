@@ -63,7 +63,10 @@ class UserController extends CommonController {
             $this->display();
         }
     }
-
+    //分类排序处理
+    public function listorder() {
+        return parent::listorder('User');
+    }
     //启用/禁用管理员用户
     public function setStatus() {
         return parent::setStatus($_POST,'User');    

@@ -33,7 +33,7 @@
               <table class="table table-bordered table-hover singcms-table">
                 <thead>
                 <tr>
-                  <th>id</th>
+                  <th width="14">排序</th>
                   <th>成员名</th>
                   <th>技能描述</th>
                   <th>缩略图</th>             
@@ -43,7 +43,7 @@
                 <tbody>
                 <volist name="users" id="user">
                   <tr>                   
-                    <td>{$user.user_id}</td>
+                    <td><input size=4 type='text'  name='listorder[{$user.user_id}]' value="{$user.listorder}"/></td>
                     <td>{$user.name}</td>
                     <td>{$user.job}</td>
                     <td><img width="150px" src="{$user.thumb}"></td>
@@ -58,6 +58,9 @@
 
                 </tbody>
               </table>
+              <div>
+                <button  id="button-listorder" type="button" class="btn btn-primary dropdown-toggle" ><span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span>更新排序</button>
+              </div>
             </form>  
           </div>
         </div>
@@ -74,11 +77,11 @@
 <!-- /#wrapper -->
 <script>
   var SCOPE = {
-    'edit_url' : '/admin.php?c=user&a=edit',
-    'add_url' : '/admin.php?c=user&a=add',
-    'set_status_url' : '/admin.php?c=user&a=setStatus',
-    'listorder_url' : '/admin.php?c=user&a=listorder',
-    'push_url' : '/admin.php?c=user&a=push',
+    'edit_url' : '/user/edit.htm',
+    'add_url' : '/user/add.htm',
+    'set_status_url' : '/user/setStatus.htm',
+    'listorder_url' : '/user/listorder.htm',
+    'push_url' : '/user/push.htm',
   }
 </script>
 <include file="Index/footer" />

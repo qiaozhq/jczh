@@ -8,7 +8,7 @@ class LoginController extends Controller {
     //登陆页面，如果登录直接跳转到后台首页
     public function index(){
         if(session('adminUser')) {
-           $this->redirect('/admin.php?c=basic');
+           $this->redirect('/basic');
         }
         $this->display();
     }
@@ -41,6 +41,6 @@ class LoginController extends Controller {
     //退出登录
     public function loginout() {
         session('adminUser', null);
-        $this->redirect('/admin.php?');
+        $this->redirect('/login');
     }
 }

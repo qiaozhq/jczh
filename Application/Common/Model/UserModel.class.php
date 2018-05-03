@@ -36,7 +36,16 @@ class UserModel extends Model {
         $res = $this->_db->where($data)->find();
         return $res;
     }
-
+    //使用模块：admin
+    public function updateListorderById($id, $listorder) {
+        if(!$id || !is_numeric($id)) {
+            throw_exception('ID不合法');
+        }
+        $data = array(
+            'listorder' => intval($listorder),
+        );
+        return $this->_db->where('user_id='.$id)->save($data);
+    }
     //使用模块：home
     public function updateByUserId($id, $data) {
 
@@ -62,7 +71,7 @@ class UserModel extends Model {
         $data = array(
             'status' => array('neq',-1),
         );
-        return $this->_db->where($data)->order('user_id desc')->select();
+        return $this->_db->where($data)->order('listorder desc,user_id desc')->select();
     }
 
     public function updateStatusById($id, $status) {

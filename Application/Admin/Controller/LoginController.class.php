@@ -17,6 +17,7 @@ class LoginController extends Controller {
     public function check() {
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $jumpUrl = '/basic.htm';
         if(!trim($username)) {
             return show(0,'用户名不能为空');
         }
@@ -35,7 +36,7 @@ class LoginController extends Controller {
         }
         D("Admin")->updateByAdminId($ret['admin_id'],array('lastlogintime'=>time()));
         session('adminUser', $ret);
-        return show(1,'登录成功');
+        return show(1,'登录成功', array('jump_url' => $jumpUrl));
     }
     
     //退出登录

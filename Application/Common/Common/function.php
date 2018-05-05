@@ -2,16 +2,17 @@
 /**
  * 公用的方法
  */
+//textarea中的换行符号转换成html的换行符号
 function formatwork($str){
    return str_replace("\r\n","<br>",$str);
 }
+//后端处理结果以json形式向前端返回
 function  show($status, $message,$data=array()) {
     $reuslt = array(
         'status' => $status,
         'message' => $message,
         'data' => $data,
     );
-
     exit(json_encode($reuslt));
 }
 function create_time($t) {
@@ -25,15 +26,12 @@ function getMenuType($type) {
 }
 function getParentMenuName($parentid,$menus=array()) {
     $ret = '无';
-    foreach ($menus as $value) {
-        if($value['menu_id'] == $parentid){
-            $ret = $value['name'];
+    foreach ($menus as $m) {
+        if($m['menu_id'] == $parentid){
+            $ret = $m['name'];
         }
     }
     return $ret;
-}
-function level($type) {
-    return $type == "D" ? '加盟商' : '普通用户';
 }
 function status($status) {
     if($status == 0) {
@@ -45,32 +43,7 @@ function status($status) {
     }
     return $str;
 }
-function paystatus($status) {
-    if($status == 2) {
-        $str = '已结帐';
-    }elseif($status == 1) {
-        $str = '未结帐';
-    }elseif($status == -1) {
-        $str = '删除';
-    }else{
-        $str = '异常';
-    }
-    return $str;
-}
-function getAdminMenuUrl($nav) {
-    $url = '/admin.php?c='.$nav['c'].'&a='.$nav['a'];
-    if($nav['f']=='index') {
-        $url = '/admin.php?c='.$nav['c'];
-    }
-    return $url;
-}
-function getActive($navc){
-    $c = strtolower(CONTROLLER_NAME);
-    if(strtolower($navc) == $c) {
-        return 'class="active"';
-    }
-    return '';
-}
+//文件上传处理结果以json形式向前端返回
 function showKind($status,$data) {
     header('Content-type:application/json;charset=UTF-8');
     if($status==0) {
@@ -78,71 +51,6 @@ function showKind($status,$data) {
     }
     exit(json_encode(array('error'=>1,'message'=>'上传失败')));
 }
-function getBasicConfig() {
-    return $result = D("Basic")->select();
-}
 function getLoginUsername() {
     return $_SESSION['adminUser']['username'] ? $_SESSION['adminUser']['username']: '';
 }
-function getCatName($navs, $id) {
-    foreach($navs as $nav) {
-        $navList[$nav['menu_id']] = $nav['name'];
-    }
-    return isset($navList[$id]) ? $navList[$id] : '';
-}
-function getCopyFromById($id) {
-    $copyFrom = C("COPY_FROM");
-    return $copyFrom[$id] ? $copyFrom[$id] : '';
-}
-function isThumb($thumb) {
-    if($thumb) {
-        return '<span style="color:red">有</span>';
-    }
-    return '无';
-}
-
-/**
-+----------------------------------------------------------
- * 字符串截取，支持中文和其他编码
-+----------------------------------------------------------
- * @static
- * @access public
-+----------------------------------------------------------
- * @param string $str 需要转换的字符串
- * @param string $start 开始位置
- * @param string $length 截取长度
- * @param string $charset 编码格式
- * @param string $suffix 截断显示字符
-+----------------------------------------------------------
- * @return string
-+----------------------------------------------------------
- */
-function msubstr($str, $start=0, $length, $charset="utf-8", $suffix=true)
-{
-    $len = substr($str);
-    if(function_exists("mb_substr")){
-        if($suffix)
-            return mb_substr($str, $start, $length, $charset)."...";
-        else
-            return mb_substr($str, $start, $length, $charset);
-    }
-    elseif(function_exists('iconv_substr')) {
-        if($suffix && $len>$length)
-            return iconv_substr($str,$start,$length,$charset)."...";
-        else
-            return iconv_substr($str,$start,$length,$charset);
-    }
-    $re['utf-8']   = "/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|[\xe0-\xef][\x80-\xbf]{2}|[\xf0-\xff][\x80-\xbf]{3}/";
-    $re['gb2312'] = "/[\x01-\x7f]|[\xb0-\xf7][\xa0-\xfe]/";
-    $re['gbk']    = "/[\x01-\x7f]|[\x81-\xfe][\x40-\xfe]/";
-    $re['big5']   = "/[\x01-\x7f]|[\x81-\xfe]([\x40-\x7e]|\xa1-\xfe])/";
-    preg_match_all($re[$charset], $str, $match);
-    $slice = join("",array_slice($match[0], $start, $length));
-    if($suffix) return $slice."…";
-    return $slice;
-}
-
-
-
-
-

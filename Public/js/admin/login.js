@@ -14,8 +14,7 @@ var login = {
         if(!password) {
             dialog.error('密码不能为空');
         }
-
-        var url = "/login/check.htm";
+        var url = SCOPE.chk_url;
         var data = {'username':username,'password':password};
         // 执行异步请求  $.post
         $.post(url,data,function(result){
@@ -23,7 +22,7 @@ var login = {
                 return dialog.error(result.message);
             }
             if(result.status == 1) {
-                return dialog.success(result.message, '/basic.htm');
+                return dialog.success(result.message, result['data']['jump_url']);
             }
 
         },'JSON');

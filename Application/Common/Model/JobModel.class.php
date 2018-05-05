@@ -1,6 +1,11 @@
 <?php
 namespace Common\Model;
 use Think\Model;
+
+/**
+ * 招聘信息操作
+ * @author  Alexander
+ */
 class JobModel extends  Model {
     private $_db = '';
     public function __construct() {

@@ -4,6 +4,7 @@ use Think\Model;
 
 /**
  * 管理员用户操作
+ * @author  Alexander
  */
 class AdminModel extends Model {
 	private $_db = '';

@@ -1,8 +1,10 @@
 <?php
 namespace Common\Model;
 use Think\Model;
+
 /**
- * 用户组操作
+ * 团队成员操作
+ * @author  Alexander
  */
 class UserModel extends Model {
 	private $_db = '';

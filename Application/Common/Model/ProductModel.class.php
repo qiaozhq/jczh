@@ -1,6 +1,11 @@
 <?php
 namespace Common\Model;
 use Think\Model;
+
+/**
+ * 产品服务操作
+ * @author  Alexander
+ */
 class ProductModel extends  Model {
     private $_db = '';
     public function __construct() {

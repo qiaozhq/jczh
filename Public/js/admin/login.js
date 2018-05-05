@@ -15,7 +15,7 @@ var login = {
             dialog.error('密码不能为空');
         }
 
-        var url = "/admin.php?c=login&a=check";
+        var url = "/login/check.htm";
         var data = {'username':username,'password':password};
         // 执行异步请求  $.post
         $.post(url,data,function(result){

@@ -8,7 +8,7 @@ use Think\Exception;
 class ProductController extends CommonController {
     //新闻管理首页
     public function index() {
-        $products = D("Product")->getProducts();
+        $products = D("Product")->getAdminProducts();
         $this->assign('products',$products);
         $this->display();
     }
@@ -69,7 +69,7 @@ class ProductController extends CommonController {
         $id = $data['product_id'];
         unset($data['product_id']);
         try {
-            $result = D("Product")->updateMenuById($id, $data);
+            $result = D("Product")->updateDataById($id, $data);
             if($result === false) {
                 return show(0,'更新失败');
             }

@@ -1,14 +1,14 @@
 <?php
 /**
- * 新闻管理
+ * 招聘信息
  */
 namespace Admin\Controller;
 use Think\Controller;
 use Think\Exception;
 class JobController extends CommonController {
-    //新闻管理首页
+    //招聘信息首页
     public function index() {
-        $jobs = D("Job")->getJobs();
+        $jobs = D("Job")->getAdminData('job', 'job_id');
         $this->assign('jobs',$jobs);
         $this->display();
     }
@@ -22,7 +22,7 @@ class JobController extends CommonController {
             if($_POST['job_id']) {
                 return $this->save($_POST);
             }
-            $id = D("Job")->insert($_POST);
+            $id = D("Job")->insert('job',$_POST);
             if($id) {
                 return show(1,'新增成功',$id);
             }
@@ -35,7 +35,7 @@ class JobController extends CommonController {
     //取得要修改的新闻数据
     public function edit() {
         $id = $_GET['id'];
-        $job = D("Job")->find($id);
+        $job = D("Job")->find('job', $id, 'job_id');
         $this->assign('job', $job);
         $this->display();
     }
@@ -45,7 +45,7 @@ class JobController extends CommonController {
         $id = $data['job_id'];
         unset($data['job_id']);
         try {
-            $result = D("Job")->updateMenuById($id, $data);
+            $result = D("Job")->updateDataById('job', $id, $data, 'job_id');
             if($result === false) {
                 return show(0,'更新失败');
             }
@@ -57,11 +57,11 @@ class JobController extends CommonController {
 
     //启用/禁用新闻
     public function setStatus() {
-        return parent::setStatus($_POST,'Job');
+        return parent::setStatus($_POST,'Job','job','job_id');
     }
 
     //分类排序处理
     public function listorder() {
-        return parent::listorder('Job');
+        return parent::listorder('Job','job','job_id');
     }
 }

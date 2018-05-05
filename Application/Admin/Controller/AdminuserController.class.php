@@ -47,7 +47,7 @@ class AdminuserController extends CommonController {
     //个人中心-个人情报取得
     public function personal() {
         $res = $this->getLoginUser();
-        $user = D("Admin")->getAdminByAdminId($res['admin_id']);
+        $user = D("Admin")->find($res['admin_id']);
         $this->assign('vo',$user);
         $this->display();
     }
@@ -61,7 +61,7 @@ class AdminuserController extends CommonController {
         $data['realname'] = $_POST['realname'];
         $data['email'] = $_POST['email'];
         try {
-            $id = D("Admin")->updateByAdminId($user['admin_id'], $data);
+            $id = D("Admin")->updateDataById($user['admin_id'], $data);
             if($id === false) {
                 return show(0, '配置失败');
             }

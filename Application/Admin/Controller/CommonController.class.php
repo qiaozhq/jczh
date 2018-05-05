@@ -39,7 +39,7 @@ class CommonController extends Controller {
 	}
 
 	//数据的禁用/启用处理
-	public function setStatus($data, $models) {
+	public function setStatus($data, $models, $_db, $idname) {
 		try {
 			if ($_POST) {
 				$id = $data['id'];
@@ -47,7 +47,7 @@ class CommonController extends Controller {
 				if (!$id) {
 					return show(0, 'ID不存在');
 				}
-				$res = D($models)->updateStatusById($id, $status);
+				$res = D($models)->updateStatusById($_db, $id, $status, $idname);
 				if ($res) {
 					return show(1, '操作成功');
 				} else {
@@ -61,7 +61,7 @@ class CommonController extends Controller {
 	}
 
 	//排序处理
-	public function listorder($model='') {
+	public function listorder($model='', $_db, $idname) {
 		$listorder = $_POST['listorder'];
 		$jumpUrl = $_SERVER['HTTP_REFERER'];
 		$errors = array();
@@ -69,7 +69,7 @@ class CommonController extends Controller {
 			if ($listorder) {
 				foreach ($listorder as $id => $v) {
 					// 执行更新
-					$id = D($model)->updateListorderById($id, $v);
+					$id = D($model)->updateListorderById($_db, $id, $v, $idname);
 					if ($id === false) {
 						$errors[] = $id;
 					}

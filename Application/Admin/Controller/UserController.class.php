@@ -8,7 +8,7 @@ use Think\Exception;
 class UserController extends CommonController {
     //用户管理首页
     public function index() {
-        $users = D('User')->getUsers();
+        $users = D('User')->getAdminUsers();
         $this->assign('users', $users);         
         $this->display();
     }
@@ -25,7 +25,7 @@ class UserController extends CommonController {
     //取得要修改的用户数据
     public function edit() {
         $user_id = $_GET['id'];
-        $user = D("User")->getUserByUserId($user_id);
+        $user = D("User")->find($user_id);
         $this->assign('user',$user);            
         $this->display();
     }
@@ -35,7 +35,7 @@ class UserController extends CommonController {
         $user_id = $_POST['user_id'];
         unset($_POST['user_id']);
         try {
-            $result = D("User")->updateByUserId($user_id, $_POST);
+            $result = D("User")->updateDataById($user_id, $_POST);
             if($result === false) {
                 return show(0,'更新失败');
             }

@@ -4,11 +4,11 @@ use Think\Controller;
 use Think\Exception;
 class IndexController extends CommonController {
     public function index(){
-    	$users = D("User")->getUsers();
+    	$users = D("User")->getHomeUsers();
         $this->assign('users', $users);
-		$products = D("Product")->getProducts();
+		$products = D("Product")->getHomeProducts();
         $this->assign('products', $products);
-		$jobs = D("Job")->getJobs();
+		$jobs = D("Job")->getHomeJobs();
         $this->assign('jobs', $jobs); 
         $this->display();
     }

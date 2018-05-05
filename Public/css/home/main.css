@@ -626,13 +626,13 @@ h4 {
 	width: 30%;
 	margin: 0 auto;
 	color: white;
-	background: url("../images/home/pc-img/us-main.png") center center no-repeat;
+	background: url("../../images/home/us-main.png") center center no-repeat;
 	background-size: 100% 100%;
 	padding: 24px 25px;
 }
 
 #contact {
-	background: url("../images/home/pc-img/us2.png") center center no-repeat;
+	background: url("../../images/home/us2.png") center center no-repeat;
 	background-size: 100% 100%;
 	filter: progid: DXImageTransform.Microsoft.AlphaImageLoader( src='../images/bg-banner.jpg', sizingMethod='scale')
 }
@@ -1330,7 +1330,7 @@ h4 {
 	width: 30%;
 	margin: 0 auto;
 	color: white;
-	background: url("../img/pc-img/us-main.png") center center no-repeat;
+	background: url("../../images/home/us-main.png") center center no-repeat;
 	background-size: 100% 100%;
 	padding: 24px 25px;
 }

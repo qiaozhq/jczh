@@ -2,7 +2,13 @@
 namespace Home\Controller;
 use Think\Controller;
 use Think\Exception;
+
+/**
+ * 前台用共通控制器
+ * @author  Alexander
+ */
 class CommonController extends Controller {
+    
     public function __construct() {
         header("Content-type: text/html; charset=utf-8");
         parent::__construct();

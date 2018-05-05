@@ -24,18 +24,18 @@ class UserController extends CommonController {
 
     //取得要修改的用户数据
     public function edit() {
-        $user_id = $_GET['id'];
-        $user = D("User")->find($user_id);
+        $id = $_GET['id'];
+        $user = D("User")->find('user', $id, 'user_id');
         $this->assign('user',$user);            
         $this->display();
     }
 
     //修改用户
     public function save() {
-        $user_id = $_POST['user_id'];
+        $id = $_POST['user_id'];
         unset($_POST['user_id']);
         try {
-            $result = D("User")->updateDataById($user_id, $_POST);
+            $result = D("User")->updateDataById('user', $id, $data, 'user_id');
             if($result === false) {
                 return show(0,'更新失败');
             }
@@ -54,7 +54,7 @@ class UserController extends CommonController {
             if(D("User")->getUserByUsername($_POST['name'])){
                 return show(0,'成员已经存在');
             } 
-            $user_id = D("User")->insert($_POST);
+            $user_id = D("User")->insert('user',$_POST);
             if($user_id) {
                 return show(1,'新增成功',$user_id);
             }
@@ -63,12 +63,14 @@ class UserController extends CommonController {
             $this->display();
         }
     }
-    //分类排序处理
-    public function listorder() {
-        return parent::listorder('User');
-    }
-    //启用/禁用管理员用户
+
+    //启用/禁用
     public function setStatus() {
-        return parent::setStatus($_POST,'User');    
-    }      
+        return parent::setStatus($_POST,'User','user','user_id');
+    }
+
+    //排序
+    public function listorder() {
+        return parent::listorder('User','user','user_id');
+    }   
 }

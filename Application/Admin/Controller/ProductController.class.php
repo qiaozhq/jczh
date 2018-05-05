@@ -28,7 +28,7 @@ class ProductController extends CommonController {
             if($_POST['product_id']) {
                 return $this->save($_POST);
             }
-            $id = D("Product")->insert($_POST);
+            $id = D("Product")->insert('product',$_POST);
             if($id) {
                 return show(1,'新增成功',$id);
             }
@@ -51,7 +51,7 @@ class ProductController extends CommonController {
     //取得要修改的新闻数据
     public function edit() {
         $id = $_GET['id'];
-        $product = D("Product")->find($id);
+        $product = D("Product")->find('product', $id, 'product_id');
         $this->assign('product', $product);
         $this->display();
     }
@@ -59,7 +59,7 @@ class ProductController extends CommonController {
     //取得要修改的新闻数据
     public function editcontent() {
         $id = $_GET['id'];
-        $product = D("Product")->find($id);
+        $product = D("Product")->find('product', $id, 'product_id');
         $this->assign('product', $product);
         $this->display();
     }
@@ -69,7 +69,7 @@ class ProductController extends CommonController {
         $id = $data['product_id'];
         unset($data['product_id']);
         try {
-            $result = D("Product")->updateDataById($id, $data);
+            $result = D("Product")->updateDataById('product', $id, $data, 'product_id');
             if($result === false) {
                 return show(0,'更新失败');
             }
@@ -79,13 +79,13 @@ class ProductController extends CommonController {
         }
     }
 
-    //启用/禁用新闻
+    //启用/禁用
     public function setStatus() {
-        return parent::setStatus($_POST,'Product');
+        return parent::setStatus($_POST,'Product','product','product_id');
     }
 
-    //分类排序处理
+    //排序
     public function listorder() {
-        return parent::listorder('Product');
+        return parent::listorder('Product','product','product_id');
     }
 }

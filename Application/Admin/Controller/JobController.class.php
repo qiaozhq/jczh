@@ -55,12 +55,12 @@ class JobController extends CommonController {
         }
     }
 
-    //启用/禁用新闻
+    //启用/禁用
     public function setStatus() {
         return parent::setStatus($_POST,'Job','job','job_id');
     }
 
-    //分类排序处理
+    //排序
     public function listorder() {
         return parent::listorder('Job','job','job_id');
     }

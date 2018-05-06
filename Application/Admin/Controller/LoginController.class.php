@@ -1,9 +1,11 @@
 <?php
-/**
- * 登陆管理
- */
 namespace Admin\Controller;
 use Think\Controller;
+
+/**
+ * 登陆管理控制器
+ * @author  Alexander
+ */
 class LoginController extends Controller {
     //登陆页面，如果登录直接跳转到后台首页
     public function index(){

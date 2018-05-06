@@ -1,10 +1,12 @@
 <?php
-/**
- * 基本管理
- */
 namespace Admin\Controller;
 use Think\Controller;
 use Think\Exception;
+
+/**
+ * 基本管理控制器
+ * @author  Alexander
+ */
 class BasicController extends CommonController {
 	//基本管理首页
 	public function index() {

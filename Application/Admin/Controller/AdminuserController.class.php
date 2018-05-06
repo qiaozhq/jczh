@@ -1,10 +1,12 @@
 <?php
-/**
- * 管理员用户管理
- */
 namespace Admin\Controller;
 use Think\Controller;
 use Think\Exception;
+
+/**
+ * 管理员管理控制器
+ * @author  Alexander
+ */
 class AdminuserController extends CommonController { 
     //管理员用户管理首页
     public function index() {

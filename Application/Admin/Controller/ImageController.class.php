@@ -1,10 +1,12 @@
 <?php
-/**
- * 图片上传
- */
 namespace Admin\Controller;
 use Think\Controller;
 use Think\Upload;
+
+/**
+ * 图片上传控制器
+ * @author  Alexander
+ */
 class ImageController extends CommonController {
     private $_uploadObj;
     public function ajaxuploadimage() {

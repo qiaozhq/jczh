@@ -1,10 +1,12 @@
 <?php
-/**
- * 新闻管理
- */
 namespace Admin\Controller;
 use Think\Controller;
 use Think\Exception;
+
+/**
+ * 产品服务控制器
+ * @author  Alexander
+ */
 class ProductController extends CommonController {
     //新闻管理首页
     public function index() {

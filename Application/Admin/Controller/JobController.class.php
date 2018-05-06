@@ -1,10 +1,12 @@
 <?php
-/**
- * 招聘信息
- */
 namespace Admin\Controller;
 use Think\Controller;
 use Think\Exception;
+
+/**
+ * 招聘信息控制器
+ * @author  Alexander
+ */
 class JobController extends CommonController {
     //招聘信息首页
     public function index() {

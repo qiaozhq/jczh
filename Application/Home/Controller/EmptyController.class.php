@@ -1,6 +1,11 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+
+/**
+ * empty控制器
+ * @author  Alexander
+ */
 class EmptyController extends Controller{
     
     //空操作_empty()方法

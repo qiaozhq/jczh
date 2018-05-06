@@ -1,10 +1,12 @@
 <?php
-/**
- * 用户管理
- */
 namespace Admin\Controller;
 use Think\Controller;
 use Think\Exception;
+
+/**
+ * 团队成员控制器
+ * @author  Alexander
+ */
 class UserController extends CommonController {
     //用户管理首页
     public function index() {

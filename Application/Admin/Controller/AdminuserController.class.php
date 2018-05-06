@@ -10,7 +10,7 @@ use Think\Exception;
 class AdminuserController extends CommonController { 
     //管理员用户管理首页
     public function index() {
-        $admins = D('Admin')->getAdmins();
+        $admins = D('Admin')->getAdminData('admin', 'admin_id');
         $this->assign('admins', $admins);
         $this->display();
     }
@@ -18,7 +18,7 @@ class AdminuserController extends CommonController {
     //增加管理员用户
     public function add() {
         // 保存数据
-        if(IS_POST) {
+        if($_POST) {
             if(!isset($_POST['username']) || !$_POST['username']) {
                 return show(0, '用户名不能为空');
             }
@@ -31,8 +31,11 @@ class AdminuserController extends CommonController {
             if($admin && $admin['status']!=-1) {
                 return show(0,'该用户存在');
             }
+            if($_POST['admin_id']) {
+                return $this->save($_POST);
+            }
             // 新增
-            $id = D("Admin")->insert($_POST);
+            $id = D("Admin")->insert('admin',$_POST);
             if(!$id) {
                 return show(0, '新增失败');
             }
@@ -41,35 +44,36 @@ class AdminuserController extends CommonController {
         $this->display();
     }
 
+    //个人中心-个人情报取得
+    public function edit() {
+        $res = $this->getLoginUser();
+        $admin = D("Admin")->find('admin', $id, 'admin_id');
+        $this->assign('admin',$admin);
+        $this->display();
+    }
+
+    //个人中心-个人情报保存
+    public function save($data) {
+        $user = $this->getLoginUser();
+        if(!$user) {
+            return show(0,'用户不存在');
+        }
+        $id = $data['admin_id'];
+        unset($data['admin_id']);
+        try {
+            $result = D("Admin")->updateDataById('admin', $id, $data, 'admin_id');
+            if($result === false) {
+                return show(0,'更新失败');
+            }
+            return show(1,'更新成功');
+        }catch(Exception $e) {
+            return show(0,$e->getMessage());
+        }
+    }
+
     //启用/禁用管理员用户
     public function setStatus() {
         return parent::setStatus($_POST,'Admin');    
     }
 
-    //个人中心-个人情报取得
-    public function personal() {
-        $res = $this->getLoginUser();
-        $user = D("Admin")->find($res['admin_id']);
-        $this->assign('vo',$user);
-        $this->display();
-    }
-
-    //个人中心-个人情报保存
-    public function save() {
-        $user = $this->getLoginUser();
-        if(!$user) {
-            return show(0,'用户不存在');
-        }
-        $data['realname'] = $_POST['realname'];
-        $data['email'] = $_POST['email'];
-        try {
-            $id = D("Admin")->updateDataById($user['admin_id'], $data);
-            if($id === false) {
-                return show(0, '配置失败');
-            }
-            return show(1, '配置成功');
-        }catch(Exception $e) {
-            return show(0, $e->getMessage());
-        }
-    }
 }

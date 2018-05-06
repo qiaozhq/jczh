@@ -125,12 +125,12 @@
 	var SCOPE = {
 		'save_url' : '/basic/save.htm',
 		'jump_url' : '/basic.htm',
-	    'ajax_upload_image_url' : '/admin.php?c=image&a=ajaxuploadimage',
+	    'ajax_upload_image_url' : '/image/ajaxuploadimage.htm',
     	'ajax_upload_swf' : '/Public/js/party/uploadify.swf',
 	};
   KindEditor.ready(function(K) {
     window.editor = K.create('#editor_singcms',{
-      uploadJson : '/admin.php?c=image&a=kindupload',
+      uploadJson : 'image/kindupload.htm',
       afterBlur : function(){this.sync();}, //
     });
   });

@@ -9,12 +9,13 @@ use Think\Controller;
 class EmptyController extends Controller{
     
     //空操作_empty()方法
-    function _empty(){
+    public function _empty(){
         header("HTTP/1.0 404 Not Found");
         $this->display(C('EMPTY_EMPTY_SUCCESS'));
     }
-    
-    function index(){//控制器不存在的时候
+
+    //控制器不存在的时候
+    public function index(){
         header("HTTP/1.0 404 Not Found");
         $this->display(C('EMPTY_EMPTY_SUCCESS'));
     }

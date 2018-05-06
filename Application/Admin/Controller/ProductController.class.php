@@ -10,7 +10,7 @@ use Think\Exception;
 class ProductController extends CommonController {
     //产品服务首页
     public function index() {
-        $products = D("Product")->getAdminProducts();
+        $products = D("Product")->getAdminData('product', 'product_id');
         $this->assign('products',$products);
         $this->display();
     }
@@ -26,7 +26,7 @@ class ProductController extends CommonController {
             }
             if(!isset($_POST['thumb']) || !$_POST['thumb']) {
                 return show(0,'必须有封面图片');
-            }          
+            }
             if($_POST['product_id']) {
                 return $this->save($_POST);
             }

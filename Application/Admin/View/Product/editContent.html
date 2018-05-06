@@ -60,25 +60,17 @@
   var SCOPE = {
     'save_url' : '/product/addcontent.htm',
     'jump_url' : '/product.htm',
-    'ajax_upload_image_url' : '/admin.php?c=image&a=ajaxuploadimage',
-    'ajax_upload_swf' : '/Public/js/party/uploadify.swf',
   };
 
 </script>
 <!-- /#wrapper -->
-<script src="/Public/js/admin/image.js"></script>
 <script>
   // 6.2
   KindEditor.ready(function(K) {
     window.editor = K.create('#editor_singcms',{
-      uploadJson : '/admin.php?c=image&a=kindupload',
+      uploadJson : '/image/kindupload.htm',
       afterBlur : function(){this.sync();}, //
     });
   });
-
-  var thumb = "{$product.thumb}";
-  if(thumb) {
-    $("#upload_org_code_img").show();
-  }
 </script>
 <include file="Index/footer" />

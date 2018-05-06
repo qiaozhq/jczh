@@ -3,7 +3,6 @@
 <div id="wrapper">
 
   <include file="Index/nav"/>
-  <script src="/Public/js/kindeditor/kindeditor-all.js"></script>
   <div id="page-wrapper">
 
     <div class="container-fluid">
@@ -77,19 +76,4 @@
 </script>
 <!-- /#wrapper -->
 <script src="/Public/js/admin/image.js"></script>
-<script>
-  // 6.2
-  KindEditor.ready(function(K) {
-    window.editor = K.create('#editor_singcms',{
-      uploadJson : '/image/kindupload.htm',
-      afterBlur : function(){this.sync();}, //
-    });
-  });
-</script>
-<script>
-  var thumb = "{$news.thumb}";
-  if(thumb) {
-    $("#upload_org_code_img").show();
-  }
-</script>
 <include file="Index/footer" />

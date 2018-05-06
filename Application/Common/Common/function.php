@@ -43,6 +43,13 @@ function status($status) {
     }
     return $str;
 }
+function setActive($navc){
+    $c = strtolower(CONTROLLER_NAME);
+    if(strtolower($navc) == $c) {
+        return 'class="active"';
+    }
+    return '';
+}
 //文件上传处理结果以json形式向前端返回
 function showKind($status,$data) {
     header('Content-type:application/json;charset=UTF-8');

@@ -45,9 +45,8 @@ class AdminuserController extends CommonController {
     }
 
     //个人中心-个人情报取得
-    public function edit() {
-        $res = $this->getLoginUser();
-        $admin = D("Admin")->find('admin', $id, 'admin_id');
+    public function personal() {
+        $admin = $this->getLoginUser();
         $this->assign('admin',$admin);
         $this->display();
     }

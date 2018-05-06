@@ -26,13 +26,16 @@
   <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
      <ul class="nav navbar-nav side-nav nav_list">
-      <li class="">
+      <li <?php echo setActive('basic');?> >
         <a href="/basic.htm"><i class="fa fa-fw fa-bar-chart-o"></i> 基本管理</a>
-      </li><li>
+      </li>
+      <li <?php echo setActive('user');?> >
         <a href="/user.htm"><i class="fa fa-fw fa-bar-chart-o"></i> 团队成员</a>
-      </li><li>
+      </li>
+      <li <?php echo setActive('product');?> >
         <a href="/product.htm"><i class="fa fa-fw fa-bar-chart-o"></i> 产品服务</a>
-      </li><li>
+      </li>
+      <li <?php echo setActive('job');?> >
         <a href="/job.htm"><i class="fa fa-fw fa-bar-chart-o"></i> 招聘信息</a>
       </li>
     </ul>

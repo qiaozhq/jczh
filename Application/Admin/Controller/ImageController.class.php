@@ -9,6 +9,7 @@ use Think\Upload;
  */
 class ImageController extends CommonController {
     private $_uploadObj;
+    
     public function ajaxuploadimage() {
         $upload = D("UploadImage");
         $res = $upload->imageUpload();

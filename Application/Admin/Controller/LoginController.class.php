@@ -10,7 +10,7 @@ class LoginController extends Controller {
     //登陆页面，如果登录直接跳转到后台首页
     public function index(){
         if(session('adminUser')) {
-           $this->redirect('/basic');
+           $this->redirect(C('LOGIN_INDEX_SUCCESS'));
         }
         $this->display();
     }
@@ -19,7 +19,6 @@ class LoginController extends Controller {
     public function check() {
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $jumpUrl = '/basic.htm';
         if(!trim($username)) {
             return show(0,'用户名不能为空');
         }
@@ -36,14 +35,14 @@ class LoginController extends Controller {
         if($ret['password'] != getMd5Password($password)) {
             return show(0,'密码错误');
         }
-        D("Admin")->updateByAdminId($ret['admin_id'],array('lastlogintime'=>time()));
+        D("Admin")->updateDataById('admin', $ret['admin_id'],array('lastlogintime'=>time()), 'admin_id');
         session('adminUser', $ret);
-        return show(1,'登录成功', array('jump_url' => $jumpUrl));
+        return show(1,'登录成功', array('jump_url' => C('LOGIN_CHECK_SUCCESS')));
     }
     
     //退出登录
     public function loginout() {
         session('adminUser', null);
-        $this->redirect('/login');
+        $this->redirect(C('LOGIN_LOGINOUT_SUCCESS'));
     }
 }

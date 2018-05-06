@@ -14,12 +14,11 @@ class CommonController extends Controller {
 		parent::__construct();
 		$this->_init();
 	}
-	//登陆检查
+	//登陆检查 访问后台任何页面，如果没有登录，都跳转到登录页面
 	private function _init() {
 		$isLogin = $this->isLogin();
 		if(!$isLogin) {
-			// 访问后台任何页面，如果没有登录，都跳转到登录页面
-			$this->redirect('/login');
+			$this->redirect(C('COMMON_INIT_SUCCESS'));
 		}
 	}
 

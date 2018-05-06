@@ -8,14 +8,14 @@ use Think\Exception;
  * @author  Alexander
  */
 class ProductController extends CommonController {
-    //新闻管理首页
+    //产品服务首页
     public function index() {
         $products = D("Product")->getAdminProducts();
         $this->assign('products',$products);
         $this->display();
     }
 
-    //添加/修改新闻
+    //添加/修改产品服务
     public function add(){
         if($_POST) {
             if(!isset($_POST['title']) || !$_POST['title']) {
@@ -39,7 +39,7 @@ class ProductController extends CommonController {
             $this->display();
         }
     }
-    //添加/修改新闻
+    //添加/修改产品服务的内容
     public function addcontent(){
         if($_POST) {
             if($_POST['product_id']) {
@@ -50,7 +50,7 @@ class ProductController extends CommonController {
         }
     }
 
-    //取得要修改的新闻数据
+    //取得要修改的产品服务
     public function edit() {
         $id = $_GET['id'];
         $product = D("Product")->find('product', $id, 'product_id');
@@ -58,7 +58,7 @@ class ProductController extends CommonController {
         $this->display();
     }
 
-    //取得要修改的新闻数据
+    //取得要修改的产品服务的内容
     public function editcontent() {
         $id = $_GET['id'];
         $product = D("Product")->find('product', $id, 'product_id');
@@ -66,7 +66,7 @@ class ProductController extends CommonController {
         $this->display();
     }
 
-    //修改新闻
+    //修改产品服务
     public function save($data) {
         $id = $data['product_id'];
         unset($data['product_id']);

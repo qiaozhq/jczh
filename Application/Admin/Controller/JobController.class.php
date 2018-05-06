@@ -15,7 +15,7 @@ class JobController extends CommonController {
         $this->display();
     }
 
-    //添加/修改新闻
+    //添加/修改招聘信息
     public function add(){
         if($_POST) {
             if(!isset($_POST['title']) || !$_POST['title']) {
@@ -34,7 +34,7 @@ class JobController extends CommonController {
         }
     }
 
-    //取得要修改的新闻数据
+    //取得要修改的招聘信息
     public function edit() {
         $id = $_GET['id'];
         $job = D("Job")->find('job', $id, 'job_id');
@@ -42,7 +42,7 @@ class JobController extends CommonController {
         $this->display();
     }
 
-    //修改新闻
+    //修改招聘信息
     public function save($data) {
         $id = $data['job_id'];
         unset($data['job_id']);

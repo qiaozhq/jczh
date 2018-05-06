@@ -8,14 +8,14 @@ use Think\Exception;
  * @author  Alexander
  */
 class UserController extends CommonController {
-    //用户管理首页
+    //团队成员首页
     public function index() {
         $users = D('User')->getAdminUsers();
         $this->assign('users', $users);         
         $this->display();
     }
 
-    //用户管理明细页面
+    //团队成员明细页面
     public function detail() {
         $order_number = $_GET['id'];
         $orderDetails = D("Order")->findOneDetail($order_number); 
